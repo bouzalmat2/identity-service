@@ -9,7 +9,7 @@ pipeline {
     environment {
 
         DOCKER_HUB_USER = "bouzalmat.karima@ensi.ma"
-        IMAGE_NAME = "smartmaintain-identity-service"
+        IMAGE_NAME = "smartmaintain-identity-service:latest"
         DOCKER_HUB_CREDS = "docker-hub"
     }
 
