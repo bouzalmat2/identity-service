@@ -8,7 +8,7 @@ pipeline {
 
     environment {
 
-        DOCKER_HUB_USER = "bouzalmat"
+        DOCKER_HUB_USER = "bouzalmat.karima@ensi.ma"
         IMAGE_NAME = "smartmaintain-identity-service"
         DOCKER_HUB_CREDS = "docker-hub"
     }
@@ -54,10 +54,10 @@ pipeline {
 
     post {
         success {
-            echo "✅ Pipeline daza mzyan o l-image t-poushat l-Docker Hub!"
+            echo "Pipeline  reussi!"
         }
         failure {
-            echo "❌ Kayn chi mouchkil f l-build, checki l-logs."
+            echo "Kayn chi mouchkil f l-build, checki l-logs."
         }
     }
 }
