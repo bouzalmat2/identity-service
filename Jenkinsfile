@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+
+        tools {
+            maven "maven3"
+        }
+
     environment {
 
         DOCKER_HUB_USER = "bouzalmat"
@@ -38,8 +43,7 @@ pipeline {
 
         stage('Ansible Deploy') {
             steps {
-                // Jenkins k-i-3yet l-Ansible bach i-7et l-container f l-server
-                // T-akkdi belli 3ndek dossier 'ansible' fih l-playbook
+
                 ansiblePlaybook(
                     playbook: 'ansible/deploy.yml',
                     inventory: 'ansible/inventory.ini'
