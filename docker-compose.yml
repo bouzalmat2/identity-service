@@ -1,0 +1,36 @@
+services:
+  postgres-identity:
+    image: postgres:16
+    container_name: postgres-identity
+    environment:
+      POSTGRES_DB: identity_db
+      POSTGRES_USER: karima
+      POSTGRES_PASSWORD: karima123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_identity_data:/var/lib/postgresql/data
+    networks:
+      - identity-net
+
+
+  identity-service:
+    image: bouzalmat/identity-service:latest
+    container_name: identity-service-app
+    depends_on:
+      - postgres-identity
+    ports:
+      - "8085:8085"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-identity:5432/identity_db
+      SPRING_DATASOURCE_USERNAME: karima
+      SPRING_DATASOURCE_PASSWORD: karima123
+    networks:
+      - identity-net
+
+networks:
+  identity-net:
+    driver: bridge
+
+volumes:
+  postgres_identity_data:

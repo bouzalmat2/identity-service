@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/smartmaintain_db
+    url: jdbc:postgresql://postgres-identity:5432/identity_db
     username: karima
     password: karima123
     driver-class-name: org.postgresql.Driver
