@@ -10,8 +10,7 @@ import java.util.UUID;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "role", discriminatorType = DiscriminatorType.STRING)
 
-@NoArgsConstructor
-@AllArgsConstructor
+
 
 public  abstract class Utilisateur {
     @Id
